@@ -1,0 +1,54 @@
+﻿@model BookStore.Models.customers
+
+@{
+    ViewData["Title"] = "Profilim";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/customerProfil/cusProfile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="header">
+        <a class="header-item" asp-controller="customers" asp-action="CstmrProfile">
+            <span class="icon"><i class="fas fa-user"></i></span>
+            Profilim
+        </a>
+
+        <a class="header-item" asp-controller="customers" asp-action="Shop">
+            <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+            Mağaza
+        </a>
+
+        <a class="header-item" asp-controller="customers" asp-action="pastOrder">
+            <span class="icon"><i class="fas fa-heart"></i></span>
+            Siparişlerim
+        </a>
+
+        <a class="header-item exit" asp-controller="Account" asp-action="Logout">
+            <span class="icon"><i class="fas fa-times-circle"></i></span>
+            Çıkış Yap
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="info-box">
+            <div class="profile-icon">
+                <i class="fas fa-user"></i> <!-- Font Awesome kullanıcı ikonu -->
+            </div>
+
+            <h2>Bilgilerim</h2>
+            <ul>
+                <li><strong>Adı:</strong> @Model.Name</li>
+                <li><strong>E-posta:</strong> @Model.c_mail</li>
+                <li><strong>Telefon Numarası:</strong> @Model.phone_num</li>
+            </ul>
+
+            <a class="update-button" asp-action="CusEditProfile">Güncelle</a>
+        </div>
+    </div>
+</body>
+</html>

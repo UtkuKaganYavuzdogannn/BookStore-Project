@@ -1,0 +1,129 @@
+﻿/* Genel stil ayarları */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://c0.wallpaperflare.com/preview/625/421/106/background-carpentry-design-hardwood.jpg'); /* Arka plan resmi */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header {
+    width: 100%; /* Tam genişlik */
+    background-color: #343a40; /* Koyu gri arka plan */
+    color: white; /* Beyaz metin rengi */
+    padding: 10px 20px; /* İç boşluk */
+    display: flex; /* Flexbox kullanımı */
+    justify-content: space-between; /* Öğeleri yayar */
+    align-items: center; /* Dikey ortalama */
+    position: fixed; /* Sabit pozisyon */
+    top: 0; /* Üstte sabit */
+    left: 0; /* Solda sabit */
+    z-index: 1000; /* Üstte görünür */
+}
+
+.left-buttons {
+    display: flex; /* Flexbox kullanımı */
+    gap: 20px; /* Butonlar arasındaki boşluk */
+}
+
+.header-item {
+    color: white; /* Beyaz metin rengi */
+    text-decoration: none; /* Alt çizgi yok */
+    padding: 10px; /* İç boşluk */
+    transition: background-color 0.3s; /* Hover efekti için geçiş */
+}
+
+    .header-item:hover {
+        background-color: #495057; /* Hoverda koyu gri */
+    }
+
+.content {
+    padding: 20px; /* İç boşluk */
+    margin-top: 70px; /* Header yüksekliği kadar boşluk bırak */
+}
+
+.store-products {
+    display: flex; /* Flexbox kullanımı */
+    flex-wrap: wrap; /* Taşma durumunda yeni satıra geçer */
+    gap: 20px; /* Ürünler arasındaki boşluk */
+}
+
+.product {
+    background-color: lightgrey; /* Beyaz arka plan */
+    border: 1px solid #dee2e6; /* Açık gri kenarlık */
+    border-radius: 5px; /* Köşeleri yuvarlatır */
+    padding: 15px; /* İç boşluk */
+    width: calc(25% - 20px); /* Ürün genişliği */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    transition: transform 0.3s; /* Hover efekti için geçiş */
+}
+.store-title {
+    color: white; 
+    margin-left: 470px; 
+    
+}
+
+
+    .product:hover {
+        transform: scale(1.05); /* Hoverda büyütme efekti */
+    }
+
+.book-photo {
+    max-width: 100%; /* Resim boyutunu sınırlama */
+    height: auto; /* Orantılı yükseklik */
+    border-radius: 5px; /* Köşeleri yuvarlatır */
+}
+
+.book-info {
+    margin-top: 10px; /* Ürün bilgileri için üst boşluk */
+}
+
+.product-buttons {
+    margin-top: 15px; /* Butonlar için üst boşluk */
+}
+
+.add-to-cart-button {
+    background-color: #28a745; /* Yeşil arka plan rengi */
+    color: white; /* Beyaz metin rengi */
+    border: none; /* Kenarlık yok */
+    padding: 10px 15px; /* Buton iç boşlukları */
+    cursor: pointer; /* İşaretçi el yapar */
+    border-radius: 5px; /* Köşeleri yuvarlatır */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    transition: background-color 0.3s; /* Hover efekti için geçiş */
+}
+
+    .add-to-cart-button:hover {
+        background-color: #218838; /* Koyu yeşil renk hover */
+    }
+
+.detail-button {
+    background-color: #007bff; /* Mavi arka plan rengi */
+    color: white; /* Beyaz metin rengi */
+    border: none; /* Kenarlık yok */
+    padding: 10px 15px; /* Buton iç boşlukları */
+    cursor: pointer; /* İşaretçi el yapar */
+    border-radius: 5px; /* Köşeleri yuvarlatır */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    transition: background-color 0.3s; /* Hover efekti için geçiş */
+    margin-left: 10px; /* Butonlar arasında boşluk */
+}
+
+    .detail-button:hover {
+        background-color: #0056b3; /* Koyu mavi renk hover */
+    }
+
+/* Responsive tasarım için */
+@media (max-width: 768px) {
+    .product {
+        width: calc(50% - 20px); /* Mobilde iki sütun */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%; /* Mobilde tam genişlik */
+    }
+}

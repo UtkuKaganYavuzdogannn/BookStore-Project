@@ -1,0 +1,16 @@
+﻿.top-bar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px;
+}
+
+    .top-bar .icon {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+        .top-bar .icon:hover {
+            text-decoration: underline;
+        }

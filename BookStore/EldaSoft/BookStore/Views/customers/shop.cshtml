@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BookStore.Models.books>
+
+@{
+    ViewData["Title"] = "Mağazam";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/customerProfil/shop.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left-buttons">
+            <a class="header-item" asp-controller="customers" asp-action="CstmrProfile">
+                <span class="icon"><i class="fas fa-user"></i></span>
+                Profilim
+            </a>
+
+            <a class="header-item" asp-controller="customers" asp-action="Shop">
+                <span class="icon"><i class="fas fa-store"></i></span>
+                Mağaza
+            </a>
+
+            <a class="header-item" asp-controller="customers" asp-action="Wishlist">
+                <span class="icon"><i class="fas fa-heart"></i></span>
+                Siparişlerim
+            </a>
+        </div>
+
+        <a class="header-item exit" asp-controller="Account" asp-action="Logout">
+            <span class="icon"><i class="fas fa-times-circle"></i></span>
+            Çıkış Yap
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="store-title">  <h1>Mağaza</h1> </div>
+        <div class="store-products">
+            @foreach (var book in Model)
+            {
+                <div class="product">
+                    <img src="@book.photo" alt="gelmedi" class="book-photo" />
+                    <div class="book-info">
+                        <h3>@book.title</h3>
+                        <p>@book.author</p>
+                        <p>Fiyat: @book.price TL</p>
+                        <p>Stok: @book.stock</p>
+                        <div class="product-buttons">
+                            <a class="add-to-cart-button" asp-controller="customers" asp-action="order" asp-route-id="@book.idbooks">Sipariş Et</a>
+                            <a class="detail-button" asp-controller="customers" asp-action="Detail" asp-route-id="@book.idbooks">Detay</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@model BookStore.Models.books
+
+@{
+    ViewData["Title"] = "Kitap Detayları";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/customerProfil/detail.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="detail-container">
+        <h1>Kitap Detayları</h1>
+
+        <div class="book-detail">
+            <img src="@Model.photo" alt="Kitap Fotoğrafı" class="book-photo" />
+            <h2>@Model.title</h2>
+            <p><strong>Yazar:</strong> @Model.author</p>
+            <p><strong>Yayıncı:</strong> @Model.publisher</p>
+            <p><strong>Basım Yılı:</strong> @Model.pub_date</p>
+            <p><strong>Sayfa Sayısı:</strong> @Model.pages</p>
+            <p><strong>Açıklama:</strong> @Model.description</p>
+
+        </div>
+        <div class="button-container">
+            <a class="back-button" asp-controller="customers" asp-action="Shop">Geri Dön</a>
+        </div>
+    </div>
+</body>
+</html>

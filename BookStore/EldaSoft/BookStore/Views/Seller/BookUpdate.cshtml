@@ -1,0 +1,63 @@
+﻿@model BookStore.Models.BooksUpdateViewModel
+
+@{
+    ViewData["Title"] = "Kitap Güncelle";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: black;
+
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .form-header {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-header">Kitap Güncelle</h2>
+            <form asp-action="BookUpdate" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="mb-3">
+                    <label for="title" class="form-label">Başlık</label>
+                    <input type="text" class="form-control" id="title" asp-for="Title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="author" class="form-label">Yazar</label>
+                    <input type="text" class="form-control" id="author" asp-for="Author" required>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Fiyat</label>
+                    <input type="text" class="form-control" id="price" asp-for="Price" required>
+                </div>
+                <div class="mb-3">
+                    <label for="stock" class="form-label">Stok</label>
+                    <input type="text" class="form-control" id="stock" asp-for="Stock" required>
+                </div>
+                <div class="mb-3">
+                    <label for="photo" class="form-label">Fotoğraf</label>
+                    <input type="text" class="form-control" id="photo" asp-for="Photo" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

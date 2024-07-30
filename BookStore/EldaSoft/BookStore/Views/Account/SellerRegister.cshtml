@@ -1,0 +1,51 @@
+﻿@model BookStore.Models.SellerRegisterViewModel
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/SellerRegister.css" />
+</head>
+
+<div class="register-container">
+
+    <div class="register-box">
+
+        <h2>Seller Registration</h2>
+
+        <form asp-action="SellerRegister" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div> <!-- Genel hata mesajları için -->
+
+
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" type="password" />
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="PhoneNum"></label>
+                <input asp-for="PhoneNum" class="form-control" />                   
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="City"></label>
+                <input asp-for="City" class="form-control" />
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Sign up</button>
+        </form>
+
+    </div>
+</div>

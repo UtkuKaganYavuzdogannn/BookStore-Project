@@ -1,0 +1,33 @@
+﻿body {
+    background-image: url('https://miro.medium.com/v2/resize:fit:3840/1*Zg4MHnNpjwEp4zUqqcsdCQ.jpeg'); /* Buraya arka plan fotoğrafının URL'sini girin */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff; /* Metin rengi beyaz */
+}
+
+.custom-jumbotron {
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam siyah arka plan */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    color: #ffffff; /* Jumbotron metin rengi beyaz */
+}
+
+    .custom-jumbotron h1 {
+        margin-left: 262px;
+        font-size: 84px;
+        font-weight: bold;
+        margin-bottom: 80px;
+    }
+
+    .custom-jumbotron p.lead {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .custom-jumbotron .btn {
+
+        font-size: 1.2rem;
+        padding: 0.75rem 1.5rem;
+        
+    }

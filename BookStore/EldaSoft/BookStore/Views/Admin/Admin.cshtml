@@ -1,0 +1,25 @@
+﻿@model BookStore.Models.admin // Modeli doğru isimle tanımlayın
+
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/admin/index.css">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="@Url.Action("ManageCustomer", "Admin")" class="icon">Müşteri Düzenle</a>
+        <a href="@Url.Action("ManageSeller", "Admin")" class="icon">Satıcı Düzenle</a>
+        <a href="@Url.Action("Logout", "Admin")" class="icon">Çıkış</a>
+    </div>
+    <div class="content">
+        <h2> : @Model.AdminId admin ID'li adminimiz panele hoş geldiniz!! </h2>
+    </div>
+</body>
+</html>

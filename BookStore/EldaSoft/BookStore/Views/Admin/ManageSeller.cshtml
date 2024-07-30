@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BookStore.Models.sellers>
+
+@{
+    ViewData["Title"] = "Satıcıları Düzenle";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/index.css">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <h1>Satıcıları Düzenle</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ad</th>
+                <th>Email</th>
+                <th>Telefon Numarası</th>
+                <th>Şehir</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var seller in Model)
+            {
+                <tr>
+                    <td>@seller.sid</td>
+                    <td>@seller.s_name</td>
+                    <td>@seller.s_mail</td>
+                    <td>@seller.s_phoneNum</td>
+                    <td>@seller.city</td>
+                    <td>
+                        <a href="#">Düzenle</a> |
+                        <a href="#">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

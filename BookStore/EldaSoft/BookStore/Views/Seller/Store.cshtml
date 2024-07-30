@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BookStore.Models.books>
+
+@{
+    ViewData["Title"] = "Mağazam";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/sellerProfil/store.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="header">
+        <a class="header-item" asp-controller="Seller" asp-action="Profile">
+            <span class="icon"><i class="fas fa-user"></i></span>
+            Profilim
+        </a>
+        <a class="header-item" asp-controller="Seller" asp-action="Store">
+            <span class="icon"><i class="fas fa-store"></i></span>
+            Mağazam
+        </a>
+        <a class="header-item" asp-controller="Seller" asp-action="Products">
+            <span class="icon"><i class="fas fa-box"></i></span>
+            Ürünlerim
+        </a>
+        <a class="header-item" asp-controller="Seller" asp-action="Sales">
+            <span class="icon"><i class="fas fa-chart-line"></i></span>
+            Satışlarım
+        </a>
+        <a class="header-item exit" asp-controller="Account" asp-action="Logout">
+            <span class="icon"><i class="fas fa-times-circle"></i></span>
+            Çıkış Yap
+        </a>
+    </div>
+    <div class="content">
+        <h1>Mağazam</h1>
+        <div class="store-products">
+            @foreach (var book in Model)
+            {
+                <div class="product">
+                    <img src="@book.photo" alt="gelmedi" class="book-photo" />
+                    <div class="book-info">
+                        <h3>@book.title</h3>
+                        <p>@book.author</p>
+                        <p>Fiyat: @book.price TL</p>
+                        <p>Stok: @book.stock</p>
+                        <div class="product-buttons">
+                            <a class="edit-button" asp-controller="Seller" asp-action="BookUpdate" asp-route-id="@book.idbooks">Düzenle</a>
+                            <form asp-controller="Seller" asp-action="DeleteBook" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@book.idbooks" />
+                                <button type="submit" class="delete-button">Sil</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

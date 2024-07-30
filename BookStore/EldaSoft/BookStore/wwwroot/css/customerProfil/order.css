@@ -1,0 +1,124 @@
+﻿/* Genel Ayarlar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ekranın tamamını kapla */
+    position: fixed; /* Sabit konumda tut */
+    top: 0; /* Üstte sabitle */
+    left: 0; /* Sol tarafta başla */
+    z-index: 1000; /* Diğer içeriklerin üstünde olsun */
+}
+
+.left-buttons {
+    display: flex;
+}
+
+.header-item {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+    .header-item:hover {
+        background-color: #575757;
+        border-radius: 5px;
+    }
+
+.icon {
+    margin-right: 5px;
+}
+
+.exit {
+    background-color: #e74c3c;
+    border-radius: 5px;
+}
+
+    .exit:hover {
+        background-color: #c0392b;
+    }
+
+.content {
+    max-width: 800px;
+    margin: 80px auto; /* Üstten mesafe bırak */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.order-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.book-info {
+    text-align: center;
+}
+
+.order-form {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+    .order-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .order-form input[type="text"],
+    .order-form input[type="number"],
+    .order-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .order-form textarea {
+        resize: vertical;
+    }
+
+.complete-order-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .complete-order-button:hover {
+        background-color: #2980b9;
+    }

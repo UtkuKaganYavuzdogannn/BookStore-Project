@@ -1,0 +1,70 @@
+﻿@model BookStore.Models.AddBooksViewModel
+
+@{
+    ViewData["Title"] = "Ürün Ekle";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/sellerProfil/products.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="header">
+        <a class="header-item" asp-controller="Seller" asp-action="Profile">
+            <span class="icon"><i class="fas fa-user"></i></span>
+            Profilim
+        </a>
+        <a class="header-item" asp-controller="Seller" asp-action="Store">
+            <span class="icon"><i class="fas fa-store"></i></span>
+            Mağazam
+        </a>
+        <a class="header-item" asp-controller="Seller" asp-action="Products">
+            <span class="icon"><i class="fas fa-box"></i></span>
+            Ürünlerim
+        </a>
+
+        <a class="header-item" asp-controller="Seller" asp-action="Sales">
+            <span class="icon"><i class="fas fa-chart-line"></i></span>
+            Satışlarım
+        </a>
+
+        <a class="header-item exit" asp-controller="Account" asp-action="Logout">
+            <span class="icon"><i class="fas fa-times-circle"></i></span>
+            Çıkış Yap
+        </a>
+    </div>
+    <div class="content">
+        <h1>@ViewData["Title"]</h1>
+        <form asp-controller="Seller" asp-action="AddProduct" method="post">
+            <div>
+                <label for="title">Başlık:</label>
+                <input type="text" id="title" name="Title" required />
+            </div>
+            <div>
+                <label for="author">Yazar:</label>
+                <input type="text" id="author" name="Author" required />
+            </div>
+            <div>
+                <label for="price">Fiyat:</label>
+                <input type="text" id="price" name="Price" required />
+            </div>
+            <div>
+                <label for="stock">Stok:</label>
+                <input type="text" id="stock" name="Stock" required />
+            </div>
+            <div>
+                <label for="photo">Fotoğraf:</label>
+                <input type="text" id="photo" name="Photo" required />
+            </div>
+            <div>
+                <label for="description">Açıklama:</label>
+                <textarea id="description" name="Description" required></textarea>
+            </div>
+            <button type="submit">Ekle</button>
+        </form>
+    </div>
+</body>
+</html>

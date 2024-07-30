@@ -1,0 +1,84 @@
+﻿@model BookStore.Models.OrderViewModel
+
+@{
+    ViewData["Title"] = "Sipariş Detayları";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/customerProfil/order.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>@ViewData["Title"]</title>
+    <script>
+        function validateQuantity() {
+            var quantity = document.getElementById("quantity").value;
+            var stock = document.getElementById("stock").value;
+            if (parseInt(quantity) > parseInt(stock)) {
+                alert("Sipariş miktarı stok miktarını aşamaz.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="left-buttons">
+            <a class="header-item" asp-controller="customers" asp-action="CstmrProfile">
+                <span class="icon"><i class="fas fa-user"></i></span>
+                Profilim
+            </a>
+
+            <a class="header-item" asp-controller="customers" asp-action="Shop">
+                <span class="icon"><i class="fas fa-store"></i></span>
+                Mağaza
+            </a>
+
+            <a class="header-item" asp-controller="customers" asp-action="pastOrder">
+                <span class="icon"><i class="fas fa-heart"></i></span>
+               Geçmiş Siparişlerim
+            </a>
+        </div>
+        
+        <a class="header-item exit" asp-controller="Account" asp-action="Logout">
+            <span class="icon"><i class="fas fa-times-circle"></i></span>
+            Çıkış Yap
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="order-title">
+            <h1>Sipariş Detayları</h1>
+        </div>
+        <div class="order-details">
+            <i class="fas fa-shopping-cart"></i>
+            <div class="book-info">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Adet Fiyat: @Model.Price TL</p>
+                <p>Stok Miktarı: @Model.Stock</p>
+            </div>
+
+            <form asp-controller="customers" asp-action="CompleteOrder" method="post" onsubmit="return validateQuantity()">
+                <div class="order-form">
+                    <input type="hidden" id="stock" value="@Model.Stock" />
+                    <input type="hidden" name="BookSellerId" value="@Model.BookSellerId" />
+                    <input type="hidden" name="BookId" value="@Model.BookId" />
+                    <input type="hidden" name="Price" value="@Model.Price" />
+
+                    <label for="recipient">Alıcı Adı:</label>
+                    <input type="text" id="recipient" name="Recipient" required />
+
+                    <label for="address">Adres:</label>
+                    <textarea id="address" name="Address" required></textarea>
+
+                    <label for="quantity">Adet:</label>
+                    <input type="number" id="quantity" name="Quantity" min="1" value="1" required />
+
+                    <button type="submit" class="complete-order-button">Siparişi Tamamla</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

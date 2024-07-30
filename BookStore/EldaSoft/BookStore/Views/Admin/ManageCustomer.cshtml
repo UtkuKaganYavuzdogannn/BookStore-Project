@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BookStore.Models.customers>
+
+@{
+    ViewData["Title"] = "Müşteri Düzenle";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/index.css">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <h1>Müşteri Düzenle</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ad</th>
+                <th>Email</th>
+                <th>Telefon Numarası</th>
+                <th>Şehir</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.cid</td>
+                    <td>@customer.Name</td>
+                    <td>@customer.c_mail</td>
+                    <td>@customer.phone_num</td>
+                    <td>@customer.cus_city</td>
+                    <td>
+                        <form method="post" asp-action="SoftDeleteCustomer" asp-route-id="@customer.cid" style="display:inline;">
+                            <button type="submit">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

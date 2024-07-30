@@ -1,0 +1,55 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://c0.wallpaperflare.com/preview/625/421/106/background-carpentry-design-hardwood.jpg'); /* Arka plan resmi */
+}
+
+.detail-container {
+    padding: 20px; /* İç boşluk */
+    max-width: 600px; /* Maksimum genişlik */
+    margin: 50px auto; /* Ortala */
+    background-color: lightgrey; /* Beyaz arka plan */
+    border-radius: 5px; /* Köşeleri yuvarlatır */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+.book-photo {
+    max-width: 100%; /* Resim boyutunu sınırlama */
+    height: auto; /* Orantılı yükseklik */
+    border-radius: 5px; /* Köşeleri yuvarlatır */
+    margin-bottom: 20px; /* Alt boşluk */
+    margin-left: 90px;
+    
+}
+.detail-container h1{
+    margin-left: 170px;
+    color: black;
+}
+.book-detail h2 {
+    margin: 0; /* Üst boşluğu kaldır */
+
+}
+
+.book-detail p {
+    margin: 5px 0; /* Paragraf aralığı */
+
+
+
+}
+
+.button-container {
+    margin-top: 20px; /* Üst boşluk */
+}
+
+.back-button {
+    padding: 10px 15px; /* Buton iç boşlukları */
+    border-radius: 5px; /* Köşeleri yuvarlatır */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    color: white; /* Beyaz metin rengi */
+    background-color: #6c757d; /* Gri arka plan */
+}
+
+    .back-button:hover {
+        background-color: #5a6268; /* Koyu gri hover */
+    }

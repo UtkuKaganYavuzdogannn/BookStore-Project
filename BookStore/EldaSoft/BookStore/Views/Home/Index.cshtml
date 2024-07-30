@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BookStore</title>
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+
+
+
+<body>
+
+    <div class="custom-jumbotron">
+        <h1 class="display-4">BookWorm</h1>
+        <p class="lead">
+            Okuyucular, istedikleri kitabı alabilir veya ellerindeki kitapları satmak isterlerse satıcı profili oluşturup satabilirler.
+            BookWorm, kitap severler için mükemmel bir pazar yeridir.
+            Kitap alışverişi yapmak hiç bu kadar kolay olmamıştı.
+            İhtiyacınız olan kitabı bulun veya kullanmadığınız kitapları nakite çevirin!
+        </p>
+        <hr class="my-4">
+        <p>Kitapları kolayca alıp satmak için başlayın.</p>
+        <a asp-controller="Account" asp-action="Login" class="btn btn-primary btn-lg" role="button">Hadi Başlayalım</a>
+    </div>
+
+</body>
+
+
+
+</html>

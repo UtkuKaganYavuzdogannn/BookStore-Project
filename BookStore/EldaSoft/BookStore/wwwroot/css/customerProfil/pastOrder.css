@@ -1,0 +1,79 @@
+﻿/* pastOrder.css */
+
+/* Genel stil ayarları */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://c0.wallpaperflare.com/preview/625/421/106/background-carpentry-design-hardwood.jpg'); /* Arka plan resmi */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header {
+    width: 100%; /* Tam genişlik */
+    background-color: #343a40; /* Koyu gri arka plan */
+    color: white; /* Beyaz metin rengi */
+    padding: 10px 20px; /* İç boşluk */
+    display: flex; /* Flexbox kullanımı */
+    justify-content: space-between; /* Öğeleri yayar */
+    align-items: center; /* Dikey ortalama */
+    position: fixed; /* Sabit pozisyon */
+    top: 0; /* Üstte sabit */
+    left: 0; /* Solda sabit */
+    z-index: 1000; /* Üstte görünür */
+}
+
+.left-buttons {
+    display: flex; /* Flexbox kullanımı */
+    gap: 20px; /* Butonlar arasındaki boşluk */
+}
+
+.header-item {
+    color: white; /* Beyaz metin rengi */
+    text-decoration: none; /* Alt çizgi yok */
+    padding: 10px; /* İç boşluk */
+    transition: background-color 0.3s; /* Hover efekti için geçiş */
+}
+
+    .header-item:hover {
+        background-color: #495057; /* Hoverda koyu gri */
+    }
+
+.content {
+    padding: 20px; /* İç boşluk */
+    margin-top: 70px; /* Header yüksekliği kadar boşluk bırak */
+}
+
+.store-title {
+    color: white;
+    text-align: center; /* Ortala */
+    margin-bottom: 20px; /* Alt boşluk */
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse; /* Kenarları birleştir */
+    margin-top: 20px; /* Üst boşluk */
+    background-color: white; /* Tablo arka planı beyaz */
+}
+
+    .order-table th, .order-table td {
+        border: 1px solid #dee2e6; /* Açık gri kenar */
+        padding: 10px; /* İç boşluk */
+        text-align: left; /* Soldan hizala */
+    }
+
+    .order-table th {
+        background-color: #007bff; /* Mavi arka plan */
+        color: white; /* Beyaz metin rengi */
+    }
+
+    .order-table tr:nth-child(even) {
+        background-color: #f2f2f2; /* Açık gri arka plan */
+    }
+
+    .order-table tr:hover {
+        background-color: #ddd; /* Hoverda açık gri */
+    }

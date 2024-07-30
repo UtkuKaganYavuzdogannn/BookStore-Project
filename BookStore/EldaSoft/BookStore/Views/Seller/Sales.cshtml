@@ -1,0 +1,73 @@
+﻿@model IEnumerable<BookStore.Models.PastOrderViewModel>
+
+@{
+    ViewData["Title"] = "Satışlarım";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/sellerProfil/siparislerim.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="header">
+        <a class="header-item" asp-controller="Seller" asp-action="Profile">
+            <span class="icon"><i class="fas fa-user"></i></span>
+            Profilim
+        </a>
+
+        <a class="header-item" asp-controller="Seller" asp-action="Store">
+            <span class="icon"><i class="fas fa-store"></i></span>
+            Mağazam
+        </a>
+
+        <a class="header-item" asp-controller="Seller" asp-action="Products">
+            <span class="icon"><i class="fas fa-box"></i></span>
+            Ürün
+        </a>
+
+        <a class="header-item" asp-controller="Seller" asp-action="Sales">
+            <span class="icon"><i class="fas fa-chart-line"></i></span>
+            Satışlarım
+        </a>
+
+        <a class="header-item exit" asp-controller="Account" asp-action="Logout">
+            <span class="icon"><i class="fas fa-times-circle"></i></span>
+            Çıkış Yap
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="store-title">
+            <h1>Satışlarım</h1>
+        </div>
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Sipariş ID</th>
+                    <th>Kitap Adı</th>
+                    <th>Alıcı</th>
+                    <th>Sipariş Tarihi</th>
+                    <th>Adet</th>
+                    <th>Toplam Fiyat</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sale in Model)
+                {
+                    <tr>
+                        <td>@sale.OrderId</td>
+                        <td>@sale.BookTitle</td>
+                        <td>@sale.CustomerName</td>
+                        <td>@sale.OrderTime.ToString("dd.MM.yyyy HH:mm")</td>
+                        <td>@sale.Quantity</td>
+                        <td>@sale.TotalPrice.ToString("F2") TL</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
